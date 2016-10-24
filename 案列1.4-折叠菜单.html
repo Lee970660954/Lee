@@ -2,9 +2,65 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title></title>
+    <title>案例1.4-折叠菜单</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul,ol{
+            list-style: none;
+        }
+        #main-menu{
+            width: 300px;
+            border: 1px solid #000;
+        }
+        #main-menu h3{
+            height: 25px;
+            background: #000;
+            color: #fff;
+        }
+        #main-menu.sub-menu{
+            display: none;
+        }
+    </style>
 </head>
 <body>
+<ul id="main-menu">
+    <li>
+       <h3 onselectstart="return false;">管理区</h3>
+        <ul class="sub-menu">
+            <li>01</li>
+            <li>02</li>
+            <li>03</li>
+        </ul>
+    </li>
+    <li>
+        <h3 onselctstart="return false">交流区</h3>
+        <ul class="sub-menu">
+            <li>01</li>
+            <li>02</li>
+            <li>03</li>
+        </ul>
+    </li>
+</ul>
+<script>
+    var oMainMenu=document.getElementById('main-menu');
+    var aH3=oMainMenu.getElementsByTagName('h3');
+    var aSubMenu=oMainMenu.getElementsByTagName('ul');
+    for(var i=0;i<aH3.length;i++){
+        aH3[i].index=i;
+        aH3[i].bShow=false;
+        aH3[i].onclick=function(){
+            if(this.bShow){
+                aSubMenu[this.index].style.display='none';
+            }else{
+                aSubMenu[this.index].style.dispaly='block';
+            }
+            this.bShow=!this.bShow;
+        };
+        }
+</script>
 
 </body>
 </html>
