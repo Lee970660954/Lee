@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>轮播图之淡入淡出</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            list-style: none;
+        }
+        img{
+            border: 0;
+        }
+        #container{
+            width: 680px;
+            height: 344px;
+            margin: 100px auto;
+            overflow: hidden;
+            position: relative;
+        }
+        #tab{
+            position: absolute;
+            right: 20px;
+            bottom: 10px;
+            z-index: 10000;
+        }
+        #tab li{
+            width: 20px;
+            height: 20px;
+            float: left;
+            margin-right: 5px ;
+            background: #000000;
+            color: #ffffff;
+            line-height:20px;
+            text-align: center;
+            cursor: pointer;
+        }
+        #tab .selected{
+            background: orange;
+        }
+        #content{
+            position: relative;
+        }
+        #content img{
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        #arrow{
+            position: absolute;
+            left: 20px;
+            bottom: 10px;
+            z-index: 10000;
+        }
+        #arrow span{
+            width: 20px;
+            height: 20px;
+            background: #000;
+            color: white;
+            margin-right:5px ;
+            cursor: pointer;
+            float: left;
+            text-align: center;
+            line-height: 20px;
+        }
+    </style>
+</head>
+<body>
+<div id="container">
+    <ul id="tab">
+        <li class="selected">1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ul>
+    <div id="content" >
+        <img src="1.jpg" alt=""/>
+        <img src="2.jpg" alt=""/>
+        <img src="3.jpg" alt=""/>
+        <img src="4.jpg" alt=""/>
+    </div>
+    <div id="arrow">
+        <span id="prev" onselectstart="return false">&lt;</span>
+        <span id="next" onselectstart="return false">&gt;</span>
+    </div>
+</div>
+<script src="jslib.js"></script>
+<script>
+    var oContainer=document.getElementById('container');
+    var oTab=document.getElementById('tab');
+    var aLi=document.getElementsByTagName('li');
+    var oContent=document.getElementById('content');
+    var aImg=document.getElementsByTagName('img');
+    var oPrev=document.getElementById('prev');
+    var oNext=document.getElementById('next');
+    var iNow=0;
+    var zIndex=4;
+        for(var i=0;i<aLi.length;i++){
+            aLi[i].index=i;
+            aImg[i].style.zIndex=aImg.length-i;
+            aLi[i].onmouseover=function(){
+                changeImg(this.index);
+            }
+        };
+    oPrev.onclick=oNext.onclick=function(){
+        if(this==oPrev){
+            iNow--;
+            if(iNow==-1){
+                iNow=aLi.length-1;
+            }
+            changeImg(iNow)
+        }
+        else{
+            iNow++;
+            if(iNow==aLi.length){
+                iNow=0;
+            }
+            changeImg(iNow)
+        }
+    }
+    function changeImg(index) {
+        iNow = index;
+        for (var i = 0; i < aLi.length; i++) {
+            aLi[i].className = '';
+        }
+        aLi[iNow].className = 'selected';
+        var oImg = aImg[iNow];
+        oImg.style.opacity = 0;
+        oImg.style.filter='alpha(opacity=0)';
+        oImg.style.zIndex=++zIndex;
+        animate(oImg,{opacity:100})
+    }
+    timer=setInterval(function(){
+        oNext.onclick();
+    },2000);
+    oContainer.onmouseover=function(){
+        clearInterval(timer);
+    }
+    oContainer.onmouseout=function(){
+        timer=setInterval(function(){
+            oNext.onclick();
+        },2000);
+    }
+</script>
+</body>
+</html>
