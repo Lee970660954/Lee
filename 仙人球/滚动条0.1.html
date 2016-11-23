@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>滚动条</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #container{
+            width: 1054px;
+            height: 900px;
+            overflow: hidden;
+           /* margin: 200px auto;*/
+            position: relative;
+        }
+        #content{
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        #scroll-bar{
+            width: 30px;
+            height: 900px;
+            background: #aaaaaa;
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+        #scroll-btn{
+            width: 30px;
+            height: 50px;
+            background: purple;
+            position: absolute;
+            left: 0;
+            top: 0;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<div id="container">
+    <div id="content">
+        <img src="ssz.jpg" alt=""/>
+        <img src="ssz..jpg" alt=""/>
+        <img src="ssz...jpg" alt=""/>
+        <div>
+            射手座又称人马座、人马宫。“射手座”是从拉丁语Sagittarius意译而来，
+            sagittarius一词拉丁语中意为“持箭者”，箭的拉丁语是sagitta，天箭座
+            即Sagitta；而“人马座”之名则是因为根据希腊神话，这位“射手”是半
+            人马族的智者喀戎，故如此称呼。​人马座的天文符号由弓和箭组成，代表理
+            智，守护星（西方占星学）与附庸星（也门占星学）为代表权力的木星，南
+            交点也在此擢升。另外人马座亦代表人的大腿及壮年时期，代表色为橙色。
+            而在密宗占星学中，人马座的神秘守护星为地球（在也门占星学中属于叛乱）
+            ，层次守护星为火星。人马宫、白羊宫及狮子宫都属于亚里士多德时期认为
+            构成宇宙的四大元素火、土、风、水中的火象星座，意象为火焰底部，温度
+            最低，但有最多火花；在占星学的三分类法中则属于本位（又称主导）、固
+            定、变动中的变动星座；而在占星学的二分类法中则属于阳、阴中的阳性星
+            座。在希腊神话中，射手座的箭对着位于它前方的天蝎座的胸，射手座在天
+            上是为了给去取金羊毛的伊阿宋指路，古希腊人将射手座与萨杜恩（半人半
+            羊）以及克洛托斯联系起来。罗马人却将他认为是优雅而智慧的喀戎，这导
+            致人们常常把它与南天的半人马座混淆，然而这两种生物有一个明显的区别，
+            射手座是一名猎手，这可以追溯到美索不达米亚的箭神涅伽尔（Nergal），
+            而他与暴躁的战神和火神伊拉（Irra）有关。天神宙斯的父亲克罗诺斯与甯
+            芙生下的孩子叫奇伦，他是半人半马的神，他从阿波罗及月神阿特密丝那儿
+            学得了许多知识及技能。奇伦相当聪明，并将他所学的知识及技能教导给许
+            多他的学生，其中包括了阿基里斯这位特洛伊战争的英雄、天医阿斯克勒庇
+            俄斯，以及其他英雄及天神的子女们。他的天性相当善良及充满智慧，不像
+            其他的人马般地凶暴残忍。奇伦原是不死之身，但最后却仍旧死去，是因为
+            大力士赫拉克勒斯正和人马族争斗，奇伦因为生性爱好和平，便退出争执的
+            地方，却在混乱中误踩了赫拉克勒斯在先前射杀九头蛇时沾了毒血的箭，进
+            而不幸中剧毒，倒地不起。由于无药可救，却又痛苦万分的奇伦便把不死之
+            身传给了普罗米修斯这位盗取天火给人类的神之后，就死去了。宙斯知道这
+            件事之后非常伤心，便将奇伦升上星空成为射手座。
+        </div>
+    </div>
+    <div id="scroll-bar">
+        <div id="scroll-btn"></div>
+    </div>
+</div>
+<script>
+    var oContainer=document.getElementById('container');
+    var oContent=document.getElementById('content');
+    var oScrollBar=document.getElementById('scroll-bar');
+    var oScrollBtn=document.getElementById('scroll-btn');
+    oScrollBtn.onmousedown=function(e){
+        e=e||window.event;
+        iDisY= e.clientY-oContainer.offsetTop-oScrollBtn.offsetTop;
+        document.onmousemove=function(e){
+            e=e||window.event;
+            var iTop= e.clientY-oContainer.offsetTop-iDisY;
+            if(iTop<=0){
+                iTop=0;
+            }
+            if(iTop>=oScrollBar.offsetHeight-oScrollBtn.offsetHeight){
+                iTop=oScrollBar.offsetHeight-oScrollBtn.offsetHeight
+            }
+            oScrollBtn.style.top=iTop+'px';
+            var fScale=iTop/(oScrollBar.offsetHeight-oScrollBtn.offsetHeight);
+            oContent.style.top=-fScale*(oContent.offsetHeight-oContainer.offsetHeight)+'px';
+            return false;
+        }
+        document.onmouseup=function(){
+            document.onmousemove='null';
+            document.onmouseup='null';
+        }
+    }
+</script>
+</body>
+</html>
