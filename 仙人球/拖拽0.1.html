@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>拖拽</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        span{
+            width: 200px;
+            height: 50px;
+            background: lightskyblue;
+            color: purple;
+            float: left;
+            cursor: pointer;
+            text-align: center;
+            line-height: 50px;
+        }
+        #div1{
+            width: 100px;
+            height: 100px;
+            background: orange;
+            position: absolute;
+            left: 0;
+            top: 60px;
+        }
+    </style>
+</head>
+<body>
+<span onselectstart="return false">人生苦短，不服就干</span>
+<div id="div1"></div>
+<script>
+    var oDiv1=document.getElementById('div1');
+    oDiv1.onmousedown = function(e){
+        e=e||window.event;
+        iDisX= e.clientX-oDiv1.offsetLeft;
+        iDisY= e.clientY-oDiv1.offsetTop;
+        document.onmousemove=function(e){
+            e=e||window.event;
+            var iLeft= e.clientX-iDisX;
+            var iTop= e.clientY-iDisY;
+            if(iLeft<=0){
+                iLeft=0
+            }
+            if(iLeft>=document.documentElement.clientWidth-oDiv1.offsetWidth){
+                iLeft=document.documentElement.clientWidth-oDiv1.offsetWidth
+            }
+            if(iTop<=0){
+                iTop=0
+            }
+            if(iTop>=document.documentElement.clientHeight-oDiv1.offsetHeight){
+                iTop=document.documentElement.clientHeight-oDiv1.offsetHeight
+            }
+            console.log(iLeft)
+            console.log(iTop)
+            oDiv1.style.left=iLeft+'px';
+            oDiv1.style.top=iTop+'px';
+            return false;
+        }
+        document.onmouseup=function(){
+            document.onmousemove='null';
+           document.onmouseup='null';
+        }
+    }
+</script>
+</body>
+</html>
