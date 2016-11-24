@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>多元素拖拽</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #div1{
+            width: 40px;
+            height: 40px;
+            background: red;
+            position: absolute;
+            left: 0;
+            top: 0;
+            text-align: center;
+            line-height: 40px;
+        }
+        #div2{
+            width: 80px;
+            height: 80px;
+            background: orange;
+            position: absolute;
+            left: 0;
+            top: 40px;
+            text-align: center;
+            line-height: 80px;
+        }
+        #div3{
+            width: 120px;
+            height: 120px;
+            background: yellow;
+            position: absolute;
+            left: 0;
+            top: 120px;
+            text-align: center;
+            line-height: 120px;
+        }
+        #div4{
+            width: 160px;
+            height: 160px;
+            background: green;
+            position: absolute;
+            left: 0;
+            top: 240px;
+            text-align: center;
+            line-height: 120px;
+        }
+        #div5{
+            width: 200px;
+            height: 200px;
+            background: blue;
+            position: absolute;
+            left: 0;
+            top: 400px;
+            text-align: center;
+            line-height: 200px;
+        }
+    </style>
+</head>
+<body>
+<div id="div1">1</div>
+<div id="div2">2</div>
+<div id="div3">3</div>
+<div id="div4">4</div>
+<div id="div5">5</div>
+<script>
+    var oDiv1=document.getElementById('div1');
+    var oDiv2=document.getElementById('div2');
+    var oDiv3=document.getElementById('div3');
+    var oDiv4=document.getElementById('div4');
+    var oDiv5=document.getElementById('div5');
+    function drag(elem) {
+        elem.onmousedown = function (e) {
+            e = e || window.event;
+            iDisX = e.clientX - elem.offsetLeft;
+            iDisY = e.clientY - elem.offsetTop;
+            document.onmousemove = function (e) {
+                e = e || window.event;
+                var iLeft = e.clientX - iDisX;
+                var iTop = e.clientY - iDisY;
+                if (iLeft <= 0) {
+                    iLeft = 0
+                }
+                if (iLeft >= document.documentElement.clientWidth - elem.offsetWidth) {
+                    iLeft = document.documentElement.clientWidth - elem.offsetWidth
+                }
+                if (iTop <= 0) {
+                    iTop = 0
+                }
+                if (iTop >= document.documentElement.clientHeight - elem.offsetHeight) {
+                    iTop = document.documentElement.clientHeight - elem.offsetHeight
+                }
+                console.log(iLeft)
+                console.log(iTop)
+                elem.style.left = iLeft + 'px';
+                elem.style.top = iTop + 'px';
+                return false;
+            }
+            document.onmouseup = function () {
+                document.onmousemove = 'null';
+                document.onmouseup = 'null';
+            }
+        }
+    }
+    drag(oDiv1);
+    drag(oDiv2);
+    drag(oDiv3);
+    drag(oDiv4);
+    drag(oDiv5);
+</script>
+</body>
+</html>
