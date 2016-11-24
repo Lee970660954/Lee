@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>选项卡</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            list-style: none;
+        }
+        #container{
+            width: 600px;
+            height: 260px;
+            margin: 100px auto;
+            position: relative;
+        }
+        #main-menu li{
+            width: 140px;
+            height: 20px;
+            background: yellow;
+            color: purple;
+            float: left;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+        #main-menu li.selected{
+            background: orange;
+        }
+        #content div{
+            position: absolute;
+            left: 0;
+            top: 20px;
+            display: none;
+        }
+        #content .selected{
+            background: yellow;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<div id="container">
+    <ul id="main-menu">
+        <li class="selected">金州勇士</li>
+        <li>洛杉矶湖人</li>
+        <li>达拉斯小牛</li>
+        <li>波特兰开拓者</li>
+    </ul>
+    <div id="content">
+        <div class="selected">
+                金州勇士队，于1946年成立并加盟NBA，是一支属于美国的加利福尼亚州奥克兰市的职业篮球队,
+            是美国男篮职业联赛(NBA)西部联盟太平洋赛区的一部分。勇士队主场原来在费城，1962年才搬到金
+            州；它是最早加盟NBA的11支球队之一；在NBA历史上，曾四次夺过总冠军，NBA的第一次总冠军得主
+            就是勇士队；NBA单场最高分纪录保持者威尔特·张伯伦就是在勇士队拿下100分的。在唐·尼尔森
+            成为球队教练后，勇士队成为了一支可以为季后赛席位展开争夺的劲旅，2006-07赛季季后赛第一轮
+            更是淘汰常规赛冠军小牛队创造NBA史上第3个“黑八奇迹”。2015年6月17日，NBA总决赛第六场，
+            勇士客场以105-97再胜骑士，总比分4-2夺取总冠军。这是勇士队在1974-75赛季以来的第一个冠军，
+            也是勇士所有球员个人职业生涯的第一个总冠军。安德烈·伊戈达拉获得总决赛MVP。2015年11月25
+            日，勇士主场战胜湖人，取得开季16连胜，打破NBA历史开局连胜纪录。2016年4月14日，勇士主场击
+            败灰熊，取得73胜9负战绩，打破公牛1995-96赛季的历史纪录。2015-16赛季，勇士公关团队荣膺布
+            莱恩-麦金泰尔奖。2016年6月20日，勇士队3-4被骑士队逆转，与总冠军失之交臂。
+        </div>
+        <div>
+                洛杉矶湖人队（L.A. Lakers），是一只位于美国加利福尼亚州洛杉矶的篮球俱乐部，1947年成
+            立于明尼阿波利斯，1960年搬迁到了洛杉矶。湖人这个名字来源于明尼阿波利斯的别称——千湖之地，
+            指在美国东北五大湖工作或者居住的人。湖人队于1948年加入美国职业篮球联赛（NBA）。球队的最
+            大特点是总有球星跟他们联系在一起。乔治·迈肯是球队早期主力中锋，在他的带领下，湖人很快
+            成为了NBA的豪门球队。1960年代，埃尔金·贝勒与杰里·韦斯特的到来，使湖人队在整个60年代从
+            未缺席过季后赛。1976年，湖人队得到了绰号“天勾”的贾巴尔。1979-80赛季，湖人选中新秀埃尔文
+            ·约翰逊，他在该赛季总决赛中顶替受伤的贾巴尔并带领球队夺冠。1996年夏天，湖人得到“大鲨鱼”
+            沙圭尔·奥尼尔，并与夏洛特黄蜂队交易得到新秀科比·布莱恩特，两人带领湖人队在1999-2002年间
+            取得了三连冠。2007年，保罗·加索尔加入湖人队，球队又于2008-2010年三度进入总决赛并2次夺冠。
+            但是伤病开始袭击湖人，导致球队不得不进入重建时期。截止2014-15赛季，湖人队史共56次进入季后
+            赛、31次获得西部冠军、16次获得总冠军，仅次于波士顿凯尔特人队；最高连胜纪录为33场（NBA历史
+            最高）。
+        </div>
+        <div>
+                达拉斯小牛队是一支位于美国德克萨斯州达拉斯的职业篮球队，1980年成立并加入美国男篮职业
+            联赛（NBA）。现从属于NBA西部联盟的西南赛区。在20世纪80年代，小牛队被视作一支有前途的球队。
+            但在90年代初，小牛队开始下坡路，两度逼近联盟历史最差战绩。90年代中期，小牛队重新开始恢复
+            元气。1998年在选秀大会上选中德克·诺维茨基并交易得到史蒂夫·纳什后，小牛队正式成为西部劲
+            旅。2005-06赛季小牛队首次夺得西部冠军并进入NBA总决赛。2006-07赛季小牛队打出队史最佳的67胜
+            15负战绩，成为常规赛冠军。2010-11赛季，小牛队在季后赛中连续击败开拓者、湖人、雷霆，再次杀
+            入总决赛，并最终复仇热火队，强势夺下队史首冠。
+        </div>
+        <div>
+                波特兰开拓者队，于1970年成立并加盟NBA，是一支属于美国的俄勒冈州波特兰市的职业篮球队，
+            是美国男篮职业联赛（NBA）西部联盟西北赛区的一部分。开拓者队在1976-77赛季取得49胜33负的
+            成绩，在比尔·沃顿的率领下，第一次杀入季后赛便夺得球队历史上唯一的一座冠军奖杯。此后开
+            拓者队保持西部强队的身份，1989-90赛季，开拓者队再度进入总决赛，决赛不敌“坏孩子军团”活
+            塞队。1991-92赛季，开拓者再次杀入总决赛，又负于公牛队。从1990年至2004年，开拓者队年年进
+            入季后赛，特别在2000年的西部决赛中，开拓者与湖人队大战7场成为经典。
+        </div>
+    </div>
+</div>
+<script>
+    var oMainMenu=document.getElementById('main-menu');
+    var aLi=oMainMenu.getElementsByTagName('li');
+    var oContent=document.getElementById('content');
+    var aDiv=oContent.getElementsByTagName('div');
+    for(var i=0;i<aLi.length;i++) {
+        aLi[i].index=i;
+        aDiv[i].index=i;
+        aLi[i].onclick = function () {
+            for (var i = 0; i < aLi.length; i++) {
+                aLi[i].index = i;
+                aLi[i].className = '';
+                aDiv[i].className = '';
+            }
+            aLi[this.index].className = 'selected';
+            aDiv[this.index].className='selected'
+        }
+        aLi[i].onselectstart='return false';
+    }
+</script>
+</body>
+</html>
