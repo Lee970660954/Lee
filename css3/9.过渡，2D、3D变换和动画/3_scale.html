@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #div1{
+            width: 200px;
+            height: 200px;
+            border: 2px dotted #000000;
+            margin: 100px auto;
+        }
+        #div2{
+            width: 200px;
+            height: 200px;
+            background: #ff0000;
+            transform:scale(-1.5);/*缩放属性：参数可以为两个值，第一个参数表示水平方向，第二个参数表示垂直方向，
+            参数绝对值小于1时是缩小，参数绝对值大于1时是放大，参数值为负数时，还会旋转180度*/
+        }
+    </style>
+</head>
+<body>
+<div id="div1">
+    <div id="div2">div</div>
+</div>
+</body>
+</html>
