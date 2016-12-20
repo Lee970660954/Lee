@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>手风琴</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            list-style: none;
+        }
+        a{
+            text-decoration: none;
+        }
+        #container{
+            width: 750px;
+            height: 500px;
+            margin: 200px auto;
+            overflow: hidden;
+        }
+        #container li{
+            width: 150px;
+            height: 500px;
+            float: left;
+            position: relative;
+            transition:all 1s linear;
+        }
+        a{
+            width: 750px;
+            background: rgba(0,0,0,0.5);
+            position: absolute;
+            color: #ffffff;
+            bottom: 0;
+        }
+        #container:hover li{
+            width: 50px;
+        }
+        #container li:hover{
+            width: 550px;
+        }
+    </style>
+</head>
+<body>
+<ul id="container">
+    <li><a href="#">描述一</a><img src="img1/1.jpg" alt=""/></li>
+    <li><a href="#">描述二</a><img src="img1/2.jpg" alt=""/></li>
+    <li><a href="#">描述三</a><img src="img1/3.jpg" alt=""/></li>
+    <li><a href="#">描述四</a><img src="img1/4.jpg" alt=""/></li>
+    <li><a href="#">描述五</a><img src="img1/5.jpg" alt=""/></li>
+</ul>
+</body>
+</html>
