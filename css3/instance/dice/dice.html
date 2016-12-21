@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>旋转的骰子</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background:rgba(0,0,0,1);
+            perspective: 1000px;
+            /*perspective-origin: 100%;*/
+        }
+        #container{
+            width: 200px;
+            height: 200px;
+            margin: 100px auto;
+            /*background: #00ff00;*/
+            transform-style: preserve-3d;
+            animation: rotate 3s linear infinite;
+        }
+        .cude{
+            width: 200px;
+            height: 200px;
+            background: rgba(255,255,255,0.8);
+            font-size: 60px;
+            text-align: center;
+            line-height: 200px;
+            position: absolute;
+        }
+        .one{
+            transform: rotateY(-180deg) translateZ(100px);
+        }
+        .two{
+            transform: rotateX(90deg) translateZ(100px);
+        }
+        .three{
+            transform: rotateY(-90deg) translateZ(100px);
+        }
+        .four{
+            transform: rotateY(90deg) translateZ(100px);
+        }
+        .five{
+            transform: rotateX(-90deg) translateZ(100px);
+        }
+        .six{
+            transform: rotateY(-180deg) translateZ(-100px);
+        }
+        @keyframes rotate {
+            from{
+
+            }
+            to{
+              transform:  rotateY(-360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+<div id="container">
+    <div class="cude one">1</div>
+    <div class="cude two">2</div>
+    <div class="cude three">3</div>
+    <div class="cude four">4</div>
+    <div class="cude five">5</div>
+    <div class="cude six">6</div>
+</div>
+</body>
+</html>
