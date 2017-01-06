@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>轮播图无缝滚动</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        img{
+            border:none;
+        }
+        ul{
+            list-style:none;
+        }
+        #container{
+            width:680px;
+            height:344px;
+            margin:50px auto;
+            position:relative;
+            overflow:hidden;
+        }
+        #content{
+            width:2720px;
+            height:344px;
+            position: absolute;
+            left: 0;
+        }
+        #content img{
+            float:left;
+        }
+        #tab{
+            position:absolute;
+            right:10px;
+            bottom:10px;
+        }
+        #tab li{
+            float: left;
+            width:20px;
+            height:20px;
+            background:black;
+            color:white;
+            margin-left: 5px;
+            text-align:center;
+            cursor:pointer;
+        }
+        #arrows{
+            position: absolute;
+            left: 10px;
+            bottom:10px;
+        }
+        #arrows span{
+            width:20px;
+            height:20px;
+            margin-left:5px;
+            float: left;
+            background:black;
+            color:white;
+            text-align:center;
+            cursor:pointer;
+        }
+       #tab .selected{
+            background: orange;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="content">
+            <img src="img1/1.jpg" alt=""/>
+            <img src="img1/2.jpg" alt=""/>
+            <img src="img1/3.jpg" alt=""/>
+            <img src="img1/4.jpg" alt=""/>
+        </div>
+        <ul id="tab">
+            <li class="selected">1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+        </ul>
+        <div id="arrows">
+            <span id="prev" onselectstart="return false">&lt;</span>
+            <span id="next" onselectstart="return false">&gt;</span>
+        </div>
+    </div>
+    <script src="../../../jslib.js"></script>
+    <script>
+        (function(){
+            window.onload = function(){
+                var oContainer = document.getElementById('container');
+                var oContent = document.getElementById('content');
+                var aImg = oContent.getElementsByTagName('img');
+                var bImg = aImg[0].cloneNode();
+                oContent.appendChild(bImg);
+                var iImgWidth = aImg[0].offsetWidth;
+//                console.log(aImg[0].offsetWidth)
+                var oTab = document.getElementById('tab');
+                var aLi = oTab.getElementsByTagName('li');
+                oContent.style.width = aImg.length*iImgWidth +'px';
+                var iNow = 0;
+                var oPrev = document.getElementById('prev');
+                var oNext = document.getElementById('next');
+                for(var i = 0;i < aLi.length;i++){
+                    aLi[i].index = i;
+                    aLi[i].onmouseover = function(){
+                        changeImg(this.index);
+                    };
+                };
+                oPrev.onclick = oNext.onclick = function(){
+                    if(this==oPrev){
+                        iNow--;
+                        if(iNow==-1){
+                            iNow = aImg.length-2;
+                            oContent.style.left = -(aImg.length-1)*iImgWidth+'px';
+                        }
+                        changeImg(iNow);
+                    }else{
+                        iNow++;
+                        if(iNow==aImg.length){
+                            iNow = 1;
+                            oContent.style.left = 0;
+                        }
+                        changeImg(iNow);
+                    }
+                }
+                function changeImg(index){
+                    var iNow = index;
+                    for(var j = 0;j < aLi.length;j++){
+                        aLi[j].className = '';
+                    }
+                    aLi[iNow==aLi.length?0:iNow].className = 'selected'
+                    animate(oContent,{
+                        left:-iNow*iImgWidth
+                    })
+                }
+                var timer;
+                function run(){
+                    timer = setInterval(function(){
+                        oNext.onclick();
+                    },1000);
+                }
+                run();
+                oContainer.onmouseover = function(){
+                    clearInterval(timer);
+                }
+                oContainer.onmouseout = function(){
+                    run();
+                }
+            }
+
+        })()
+    </script>
+</body>
+</html>
