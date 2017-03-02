@@ -1,0 +1,141 @@
+/*样式重置开始*/
+*{
+    margin: 0;
+    padding: 0;
+}
+ul{
+    list-style: none;
+}
+img{
+    border: 0;
+}
+a{
+    text-decoration: none;
+}
+.clearfix::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+/*样式重置结束*/
+/*通用样式开始*/
+.wrapper{
+    width: 1000px;
+    height: 100%;
+    margin: 0 auto;
+}
+/*通用样式结束*/
+/*header样式开始*/
+#header{
+    background: #000000;
+    height: 102px;
+}
+#header .wrapper{
+    position: relative;
+}
+.header-logo{
+    width: 185px;
+    margin: 0 auto;
+}
+.header-search{
+   position: absolute;
+    right: 40px;
+    bottom: 10px;
+}
+.header-search li{
+    float: left;
+    color: #FFFFFF;
+    padding: 0 5px;
+}
+.header-search a:hover{
+   color: orange;
+}
+.header-search a{
+    color: #FFFFFF;
+    font-size: 14px;
+}
+/*header样式结束*/
+/*nav样式开始*/
+#nav{
+    height: 50px;
+}
+.nav-menu{
+
+}
+.nav-menu li{
+    float: left;
+    padding: 5px 30px;
+}
+
+.nav-menu a.selected{
+    color: orange;
+}
+.nav-menu li:hover{
+    border-bottom: 5px solid orange;
+}
+.nav-menu a:hover{
+    color: orange;
+}
+.nav-menu a{
+    color: #000000;
+    font-size: 14px;
+}
+/*nav样式结束*/
+/*carousel样式开始*/
+#carousel-container{
+    overflow: hidden;
+    /*width: 50%;*/
+    /*height:650px;*/
+}
+.carousel-news div{
+    width: 270px;
+    height: 160px;
+}
+.carousel-news{
+    /*opacity: 0.5;*/
+    background: #000000;
+
+}
+.carousel-news img{
+    width: 100%;
+    /*height: 100%;*/
+}
+.carousel-news a{
+     color: #FFFFFF;
+
+ }
+.carousel-news p{
+    width: 270px;
+    font-size: 14px;
+}
+.carousel-news li{
+    float: left;
+    margin: 20px 30px;
+    background: #000000;
+    opacity: 0.3;
+}
+.carousel-news li:hover{
+    background: #000000;
+    opacity: 1;
+}
+/*carousel样式结束*/
+/*footer样式开始*/
+#footer{
+    background: #000000;
+    margin-top: 20px;
+}
+#footer a{
+    color: #FFFFFF;
+    font-size: 14px;
+}
+#footer span{
+    color: #FFFFFF;
+    font-size: 14px;
+    float: left;
+    padding: 10px 5px;
+}
+.footer-menu li{
+    float: left;
+    padding: 10px 5px;
+}
+/*footer样式结束*/
