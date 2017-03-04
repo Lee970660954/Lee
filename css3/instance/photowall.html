@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>旋转的照片墙</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        html{
+            width:100%;
+            height: 100%;
+        }
+        body{
+            width: 100%;
+            height: 100%;
+            background-image: url(photo/love/bg.jpg);
+        }
+        #container .img{
+            width: 125px;
+            height: 125px;
+            border: 5px solid #ffffff;
+            box-shadow: 2px 2px 2px rgba(0,0,0,0.5);
+            cursor: pointer;
+            position: absolute;
+            left: -500px;
+            top: -500px;
+            transition: all 1s linear;
+        }
+        #container span{
+            width: 100%;
+            height: 100%;
+            display: block;
+            background-repeat: no-repeat;
+            opacity: 0;
+            transition: all 1s ease-in-out;
+            position:absolute;
+        }
+        #prev,#next{
+            width: 60px;
+            height: 60px;
+            position: absolute;
+            top: 50%;
+            margin-top: -30px;
+            border-radius: 30%;
+            cursor: pointer;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-color: #ffffff;
+            opacity: 0.8;
+            display: none;
+        }
+        #prev{
+            left: -20px;
+            background-image: url(photo/love/prev.png);
+        }
+        #next{
+            right: -20px;
+            background-image: url(photo/love/next.png);
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<div id="prev"></div>
+<div id="next"></div>
+<script>
+    (function() {
+        var oContainer = document.getElementById('container');
+        var ROW = 4;
+        var COL = 6;
+        var NUM = ROW * COL;
+        var ThumbWidth = 125;
+        var ThumbHeight = 125;
+        var BigImgWidth = 500;
+        var BigImgHeight = 750;
+        var count = 0;
+        var iNow = 0;
+        var oPrev = document.getElementById('prev');
+        var oNext = document.getElementById('next');
+        for (var i = 0; i < NUM; i++) {
+            var oThumbImg = new Image();
+            oThumbImg.onload = function () {
+                count++;
+                if (count == 2 * NUM) {
+                    loadSuccess();
+                }
+            }
+            oThumbImg.src = "photo/love/thumbs/" + (i + 1) + ".jpg";
+            var oBigImg = new Image();
+            oBigImg.onload = function () {
+                count++;
+                if (count == 2 * NUM) {
+                    loadSuccess();
+                }
+            }
+            oBigImg.src = "photo/love/" + (i + 1) + ".jpg";
+        }
+        function loadSuccess() {
+            var index = 0;
+            for (var i = 0; i < ROW; i++) {
+                for (var j = 0; j < COL; j++) {
+                    index++;
+                    var oDiv = document.createElement('div');
+                    oDiv.style.backgroundImage = "url(photo/love/thumbs/" + index + ".jpg)";
+                    oDiv.innerHTML = "<span></span>";
+                    oDiv.pos = {
+                        row: i,
+                        col: j
+                    };
+                    oDiv.index = index
+                    oDiv.className = "img";
+                    oContainer.appendChild(oDiv);
+                }
+            }
+            var aDiv = oContainer.getElementsByTagName('div');
+            var bodyWidth = document.body.clientWidth;
+            var bodyHeight = document.body.clientHeight;
+            var oDivWidth = aDiv[0].offsetWidth;
+            var oDivHeight = aDiv[0].offsetHeight;
+            var iColGap = (bodyWidth - COL * oDivWidth) / (COL + 1);
+            var iRowGap = (bodyHeight - ROW * oDivHeight) / (ROW + 1);
+            var timerCount = NUM;
+            var timer = setInterval(function () {
+                timerCount--;
+                aDiv[timerCount].style.left = (oDivWidth + iColGap) * aDiv[timerCount].pos.col + iColGap + "px";
+                aDiv[timerCount].style.top = (oDivHeight + iRowGap) * aDiv[timerCount].pos.row + iRowGap + "px";
+                aDiv[timerCount].style.transform = "rotate(" + (Math.random() * (40) - 20) + "deg)";
+                if (timerCount == 0) {
+                    clearInterval(timer);
+                }
+            }, 100);
+            var flag = false;
+            oContainer.onclick = function (e) {
+                var target = e.target || window.event.srcElement;
+                if (target.className != "img") {
+                    target = target.parentNode;
+                }
+                if (flag) {
+                    for (var i = 0; i < NUM; i++) {
+                        aDiv[i].style.borderWidth = "5px";
+                        aDiv[i].style.transform = "rotate(" + (Math.random() * 40 - 20) + "deg)";
+                        aDiv[i].style.left = (oDivWidth + iColGap) * aDiv[i].pos.col + iColGap + "px";
+                        aDiv[i].style.top = (oDivHeight + iRowGap) * aDiv[i].pos.row + iRowGap + "px";
+                        aDiv[i].style.backgroundImage = "url(photo/love/thumbs/" + aDiv[i].index + ".jpg)";
+                        var oSpan = aDiv[i].getElementsByTagName('span')[0];
+                        oSpan.style.opacity = 0;
+                        iNow = target.index;
+                        oPrev.style.display = oNext.style.display = "none";
+
+                    }
+                } else {
+                    for (var i = 0; i < NUM; i++) {
+                        aDiv[i].style.borderWidth = "1px";
+                        aDiv[i].style.transform = "rotate(" + 0 + "deg)";
+                        aDiv[i].style.left = (bodyWidth - BigImgWidth) / 2 + (oDivWidth - 8) * aDiv[i].pos.col + "px";
+                        aDiv[i].style.top = -(bodyHeight - BigImgHeight) / 2 + (oDivHeight - 8) * aDiv[i].pos.row + "px";
+//                       console.log((bodyHeight-BigImgHeight)/2)
+                        var oSpan = aDiv[i].getElementsByTagName('span')[0];
+                        oSpan.style.backgroundImage = "url(photo/love/" + target.index + ".jpg)";
+                        var x = -ThumbWidth * aDiv[i].pos.col;
+                        var y = -ThumbHeight * aDiv[i].pos.row;
+                        oSpan.style.backgroundPosition = x + "px " + y + "px";
+                        oSpan.style.opacity = 1;
+                        iNow = target.index;
+                        oPrev.style.display = oNext.style.display = "block";
+
+
+                    }
+
+                }
+                flag = !flag;
+            }
+            oPrev.onclick = oNext.onclick = function () {
+                if (this == oPrev) {
+                    iNow--;
+                    if (iNow == 0) {
+                        iNow = aDiv.length;
+                    }
+                } else {
+                    iNow++;
+                    if (iNow == aDiv.length + 1) {
+                        iNow = 1;
+                    }
+                }
+                var arr = [];
+                for(var i=0; i<NUM; i++){
+                    arr.push(i);
+                }
+                arr.sort(function(){
+                    return Math.random() - 0.5;
+                });
+                var timer2 = setInterval(function(){
+                    var item = arr.pop();
+                    var oSpan = aDiv[item].getElementsByTagName("span")[0];
+                    oSpan.style.backgroundImage = "url(photo/love/"+ iNow +".jpg)";
+                    if(arr.length == 0){
+                        clearInterval(timer2);
+                    }
+                }, 30);
+
+            };
+//            for(var i=0;i<NUM;i++){
+//                var oSpan = aDiv[i].getElementsByTagName("span")[0];
+//                oSpan.style.backgroundImage = "url(photo/love/"+(iNow+1)+".jpg)";
+//            }
+
+        };
+
+
+
+
+    })()
+</script>
+</body>
+</html>

@@ -17,7 +17,8 @@
             width: 200px;
             height: 200px;
             margin: 100px auto;
-            /*background: #00ff00;*/
+            background: #00ff00;
+            transform: rotateZ(45deg);
             transform-style: preserve-3d;
             animation: rotate 3s linear infinite;
         }
@@ -46,15 +47,15 @@
             transform: rotateX(-90deg) translateZ(100px);
         }
         .six{
-            transform:  translateZ(
-                    100px);
+            transform: rotateY(-180deg) translateZ(-100px);
         }
+
         @keyframes rotate {
             from{
 
             }
             to{
-              transform:  rotateY(-360deg);
+                transform:  rotateY(-360deg);
             }
         }
     </style>
