@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>3_component</title>
+</head>
+<body>
+    <div id="app"></div>
+    <script src="react-15.3.1/build/react.js"></script>
+    <script src="react-15.3.1/build/react-dom.js"></script>
+    <script src="react-15.3.1/browser.js"></script>
+    <script type="text/babel">
+        var Messagebox = React.createClass({
+            render:function(){
+                return (<div>
+                        <h1>Hello World!
+                <div>asdf</div>
+                <div>asdf</div>
+                <div>asdd</div>
+                </h1>
+                <div>6666666</div>
+                </div>)
+
+            }
+        });
+        ReactDOM.render(
+                <div><Messagebox/>
+                    <Messagebox/>
+                </div>
+                ,
+                document.getElementById("app")
+        );
+    </script>
+</body>
+</html>
+/*1.React中的组件名的首字母必须大写；
+2.无论是在定义组件时还是使用组件时，组件必须是一个闭合的标签；
+3.创建组件的语法是：
+var Messagebox = React.createClass（{
+    rende:function(){
+        return (组件的html结构)
+}
+}）参数是一个对象
+ReactDOM.render（
+    <div><Messagebox/>
+        <Messagebox/>
+    </div>,
+document.getElementById("app");
+）*/

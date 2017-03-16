@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>5_state</title>
+</head>
+<body>
+    <div id="app"></div>
+    <script src="react-15.3.1/build/react.js"></script>
+    <script src="react-15.3.1/build/react-dom.js"></script>
+    <script src="react-15.3.1/browser.js"></script>
+    <script type="text/babel">
+        var Counter = React.createClass({
+            getInitialState:function(){
+                return {
+                        count : 0
+                }
+            },
+            clickHandler:function(){
+//                this.state.count = this.state.count + 1;
+////                console.log(this.state.count);
+//                this.forceUpdate();
+                this.setState({count : this.state.count + 1});
+            },
+            render:function(){
+                return(
+                        <div>
+                                <button onClick={this.clickHandler}>点老子加一</button><br/>
+                                <span>{this.state.count}</span>
+                        </div>
+                );
+            }
+        });
+        ReactDOM.render(
+                <Counter/>
+                ,
+                document.getElementById("app")
+        );
+    </script>
+</body>
+</html>
+/*
+1.在React中，e不是原生的e，而是React框架封装好的e，但是我们也可以取到原生的e，使用e.nativeEvent来获取原生的e；
+2.同上，在React中，事件也不是原生的，也是React框架封装好的，并且事件类型要大写，例如onClick，而不是onclick；
+3.在React中，变量要用{}括起来；
+4.forceUpdate（）强制刷新；
+5.state：组件免不了要与用户互动，React的一大创新，就是将组件看成是一个状态机，一开始有一个初始状态，然后用户互动，导致
+状态变化，从而触发重新渲染UI；
+*/

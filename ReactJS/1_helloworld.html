@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>1_helloworld</title>
+    <style>
+        .app{
+            background: #ff0000;
+        }
+    </style>
+</head>
+<body>
+    <div id="app"></div>
+    <script src="react-15.3.1/build/react.js"></script>
+    <script src="react-15.3.1/build/react-dom.js"></script>
+    <script>
+        ReactDOM.render(
+                React.createElement("h1",{className:"app"},"Hello World" ,
+                        React.createElement('div',{className:"app1"},"Good Morning")),
+                document.getElementById("app")
+        );
+    </script>
+</body>
+</html>
+/*
+ReactDOM.render()方法是ReactJS框架提供的一种将内容渲染到网页页面的方法，该方法有两个参数，
+第一个参数是要放入网页的内容，通常用 React.createElement（）方法， React.createElement（）
+方法中有三个参数，第一个参数是字符串形式，表示要创建的内容的具体类型，例如：h1，div等；第
+二个参数是对象形式，表示要创建的内容的属性，例如;id,class等；第三个参数是要创建的内容的内
+容，注意第三个参数后面可以再次使用React.createElement（）方法来实现DOM结构的嵌套；
+第二个参数是要放入网页的位置（DOM节点的位置，而非定位中的位置），例如document.getElementById("app")，
+注意这里只支持原生写法；
+*/

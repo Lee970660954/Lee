@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2_jsx</title>
+    <style>
+        .aa{
+            background: #ff0000;
+        }
+    </style>
+</head>
+<body>
+    <div id="app"></div>
+    <script src="react-15.3.1/build/react.js"></script>
+    <script src="react-15.3.1/build/react-dom.js"></script>
+    <script src="react-15.3.1/browser.js"></script>
+    <!-- 解析JSX的文件-->
+    <!-- JSXTransformer.js-->
+    <script type="text/babel">
+        ReactDOM.render(
+               <h1>Hello World
+                <div className="aa">hhhhhhh</div>
+                <p>66666666</p>
+        </h1>,
+                document.getElementById('app')
+        );
+    </script>
+</body>
+</html>
+/*JSX:是一种类XML语言，全称是JavaScript XML。ReactJS可以不使用XML来编写组件但是使用XML可以让代码可读性更高、
+语义更清晰、对ReactJS元素进行抽象等等（总结来说，XML在ReactJS中的最大作用是可以在Js代码里写Html代码）
+
+语法糖(Syntactic sugar)，也译为糖衣语法，是由英国计算机科学家彼得·约翰·兰达(Peter J. Landin)发明的一个术语，
+指计算机语言中添加的某种语法，这种语法对语言的功能并没有影响，但是更方便程序员使用。通常来说使用语法糖能够增
+加程序的可读性，从而减少程序代码出错的机会。*/

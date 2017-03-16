@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>6_props</title>
+</head>
+<body>
+    <div id="app"></div>
+    <script src="react-15.3.1/build/react.js"></script>
+    <script src="react-15.3.1/build/react-dom.js"></script>
+    <script src="react-15.3.1/browser.js"></script>
+    <script type="text/babel">
+       var Maincomponent = React.createClass({
+           render:function(){
+               var data = "123456";
+               var arr1 = [1,2,3,4];
+               return (<div>
+                       <Subcomponent str={data} arr={arr1}/>
+                        <div>666666</div>
+                       </div>
+                       )
+           }
+       });
+        var Subcomponent = React.createClass({
+            getDefaultProps:function(){
+                return{
+                    arr : []
+                }
+            },
+//获取父子元素传值的默认值；
+            render:function(){
+                var msn = [];
+                this.props.arr.forEach(function(elem,index){
+                    msn.push(<div key={index}>{elem}</div>)
+                });
+                return (<div>
+                        <div>aaaaaa</div>
+                         <p>{this.props.str}</p>
+                        <div>{msn}</div>
+                        </div>
+                        )
+            }
+        })
+        ReactDOM.render(
+                <Maincomponent/>
+                ,
+                document.getElementById("app")
+        )
+
+    </script>
+</body>
+</html>
+/*
+1.props;（用于父组件和子组件传值的时候使用，而state是进行页面渲染的，要区别开）
+由于this.props和this.state都用于描述组件的特性，可能会产生混淆。一个简单的区分方法是，this.props表示那些一旦定义，
+就不再改变的特性，而this.state是会随着用户互动而产生的变化的特性。
+2.ReactJS是单向数据绑定，与Vue.JS和Angulor.JS不同；
+*/
