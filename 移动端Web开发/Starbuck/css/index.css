@@ -1,0 +1,506 @@
+/*通用样式开始*/
+*{
+    margin: 0;
+    padding: 0;
+}
+ul,ol{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+.clearfix::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+html{
+    font-size: 16px;
+    font-family: AvenirRoman, HelveticaNeue-Light, Helvetica Neue, arial, Hiragino Sans GB, 冬青黑体, Microsoft YaHei New, Microsoft Yahei, 微软雅黑, 宋体, SimSun, STXihei, 华文细黑, sans-serif;
+}
+/*通用样式结束*/
+/*header开始*/
+body{
+    /*height: 4000px;*/
+}
+#header{
+    /*width: 100%;*/
+    height: 100px;
+    /*background: orange;*/
+    display: -webkit-box;
+    padding: 0 30px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: white;
+}
+#header>div{
+    -webkit-box-flex: 1;
+}
+.header1{
+    height: 46px;
+    margin-top: 27px;
+    opacity: 0.6;
+}
+.header1:hover{
+    opacity: 1;
+}
+.header1 a{
+    width: 30px;
+    display: block;
+    font-size: 0.8rem;
+    text-align: center;
+    color: #000000;
+    /*margin-top: 27px;*/
+}
+/*.header1 img{*/
+    /*margin-top: 35px;*/
+    /*margin-left: 20px;*/
+/*}*/
+/*.header1 span{*/
+    /*margin-top: 0;*/
+    /*margin-left: 20px;*/
+/*}*/
+.header2 img{
+    width: 73px;
+    /*height: 73px;*/
+    /*margin-top: 14px;*/
+}
+.header2{
+    /*height: 100px;*/
+    text-align: center;
+    margin-top: 14px;
+    /*line-height: 100px;*/
+}
+.header3{
+    text-align: right;
+    height: 40px;
+    margin-top: 30px;
+    font-size: 1rem;
+}
+.header3 span{
+    color: #000000;
+    opacity: 0.5;
+}
+.header3 a{
+    color: #b89f7a;
+    font-weight: bolder;
+}
+.header3 a:hover{
+    color: #967a50;
+}
+/*.header3 span{*/
+    /*width: 80px;*/
+    /*height: 20px;*/
+    /*display: inline-block;*/
+    /*margin-top: 30px;*/
+
+/*header结束*/
+/*sidebuck开始*/
+#mask{
+    background: #000000;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: none;
+    opacity: 0.4;
+}
+#menu{
+    /*width: 0px;*/
+    width: 270px;
+    background: #000000;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    color: white;
+    display: none;
+}
+#sidebuck:target #mask{
+    display:block;
+}
+#sidebuck:target #menu{
+    display: block;
+    /*width: 270px;*/
+}
+/*sidebuck结束*/
+/*neck开始*/
+/*#neck{*/
+    /*margin-top: 100px;*/
+    /*width: 100%;*/
+    /*/!*height: 674px;*!/*/
+    /*padding-top: 50%;*/
+    /*background: url("../img/kv-desktop-cn-20161220150546.jpg") no-repeat;*/
+    /*background-size: 100% 100%;*/
+    /*overflow: hidden;*/
+/*}*/
+/*.neck-news1{*/
+    /*width: 100px;*/
+    /*height: 50px;*/
+    /*margin: 30% auto 0 auto;*/
+    /*background: orange;*/
+/*}*/
+/*.neck-news2{*/
+    /*width: 40px;*/
+    /*height: 25px;*/
+    /*background: orange;*/
+    /*margin-top: 18px;*/
+    /*margin-left: 0px;*/
+/*}*/
+#neck{
+    margin-top: 100px;
+    position: relative;
+}
+#neck .img1{
+    width: 100%;
+    display: block;
+}
+#neck .img2{
+    display: none;
+}
+.neck-news1{
+    color: #FFFFFF;
+    width: 60px;;
+    height: 25px;
+    font-size: 14px;
+    background: #b89f7a;
+    position: absolute;
+    left: 46%;
+    top: 31%;
+    cursor: pointer;
+}
+.neck-news1:hover{
+    background: orange;
+}
+.neck-news2{
+    color: #FFFFFF;
+    width: 35px;
+    height: 21px;
+    background: #b89f7a;
+    position: absolute;
+    right: 6%;
+    top: 4%;
+    cursor: pointer;
+}
+.neck-news2:hover{
+    background: orange;
+}
+#neck span{
+    /*float: left;*/
+    display: block;
+    text-align: center;
+}
+/*neck结束*/
+/*petto样式开始*/
+#petto{
+    height: 220px;
+    background: #000000;
+}
+#petto-container{
+    width: 780px;
+    height: 100%;
+    /*background: #FFFFFF;*/
+    margin: 0 auto;
+    /*overflow: hidden;*/
+}
+/*#petto-container>div{*/
+    /*float: left;*/
+/*}*/
+.petto-left{
+    width: 350px;
+    float: left;
+}
+.petto-right{
+    width: 430px;
+    float: left;
+}
+.petto-left p{
+    width: 260px;
+    height: 40px;
+    margin: 72px 0 0 90px;
+    /*background: orange;*/
+    line-height: 40px;;
+    font-size: 18px;
+    font-family:  AvenirLight, 'HelveticaNeue-Light', 'Helvetica Neue', arial, "Hiragino Sans GB", "冬青黑体", "Microsoft YaHei New", "Microsoft Yahei", "微软雅黑", 宋体, SimSun, STXihei, "华文细黑", sans-serif;;
+    color: #FFFFFF;
+}
+.petto-right p{
+    line-height: 40px;
+    text-align: center;
+}
+.petto-title{
+    width: 430px;
+    height: 40px;
+    /*background: orange;*/
+    margin-top: 38px;
+    font-size: 26px;
+    font-family: AvenirLight, 'HelveticaNeue-Light', 'Helvetica Neue', arial, "Hiragino Sans GB", "冬青黑体", "Microsoft YaHei New", "Microsoft Yahei", "微软雅黑", 宋体, SimSun, STXihei, "华文细黑", sans-serif;;
+    color: #FFFFFF;
+}
+.petto-content{
+    width: 430px;
+    height: 40px;
+    /*background: red;*/
+    color: #FFFFFF;
+    font-size: 16px;
+    font-family:  AvenirLight, 'HelveticaNeue-Light', 'Helvetica Neue', arial, "Hiragino Sans GB", "冬青黑体", "Microsoft YaHei New", "Microsoft Yahei", "微软雅黑", 宋体, SimSun, STXihei, "华文细黑", sans-serif;;
+}
+.petto-manage span{
+    width: 114px;
+    height: 50px;
+    float: left;
+    line-height: 50px;
+    text-align: center;
+    border: 2px solid #a98e67;
+    color: #a98e67;
+}
+/*.petto-manage{*/
+    /*line-height: 50px;*/
+
+/*}*/
+/*.petto-manage span{*/
+    /*border: 2px solid #a98e67;*/
+    /*color: #a98e67;*/
+/*}*/
+.petto-login{
+    margin-left: 20px;
+}
+.petto-more{
+    margin-left: 50px;
+    color: #a98e67 ;
+}
+/*petto样式结束*/
+/*waist样式开始*/
+#waist>div{
+    width: 50%;
+    float: left;
+}
+#waist img{
+    width: 100%;
+    display: block;
+}
+
+/*waist样式结束*/
+/*more样式开始*/
+#more{
+    background: #000000;
+}
+#more-container{
+    width: 100%;
+    height: 528px;
+    padding: 40px 0;
+}
+#more-container>div{
+    float: left;
+}
+.more-left{
+    width: 480px;
+    height: 528px;
+    background: #000000;
+}
+.more-left img{
+    width: 100%;
+}
+.more-right{
+    width: 460px;
+    height: 528px;
+    /*vertical-align: middle;*/
+    /*text-align: center;*/
+}
+.more-d1{
+    display: table;
+    margin-bottom: 14px;
+}
+.more-d2{
+    width: 100%;
+    height: 64px;
+    margin-top: 32px;
+}
+#more h3{
+    width: 100%;
+    height: 22px;
+    margin: 28px 0 13px 0;
+    font-size: 13px;
+    color: #a98e67;
+    text-align: center;
+    line-height: 22px;
+}
+#more p{
+    width: 100%;
+    height:200px;
+    font-size: 26px;
+    line-height: 40px;
+    color: #707070;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+.more-right a{
+    height: 18px;
+    display: inline-block;
+    padding: 14px 40px;
+    margin: 7px;
+    background: #707070;
+    font-size: 14px;
+    border: 2px solid #a98e67;
+    color: #a98e67;
+}
+.more-a1{
+    width: 60px;
+}
+.more-a2{
+    width: 75px;
+}
+.more-d2{
+    width: 100%;
+    text-align: center;
+}
+/*more样式结束*/
+/*footer样式开始*/
+#footer{
+    height: 139px;
+    background: rgb(41,41,41);
+    color: rgb(163,163,163);
+    font-size: 13px;
+    margin: 0 auto;
+}
+#footer-container{
+    padding: 39px 0;
+}
+#footer a{
+    color: rgb(163,163,163);
+}
+/*footer样式结束*/
+
+@media (max-width: 991px) {
+    #neck .img1{
+        display: none;
+    }
+    .neck-news1{
+        display: none;
+    }
+    #neck .img2{
+        width: 100%;
+        display: block;
+    }
+    #more{
+        height: 703px;
+    }
+    #more-container{
+        width: 720px;
+        height: 623px;
+        margin: 0 auto;
+    }
+    .more-left{
+        height: 623px;
+    }
+    .more-right{
+        width: 240px;
+        height: 623px;
+    }
+    .more-d1{
+        width:100%;
+        height: 400px;
+    }
+    .more-d2{
+        width: 100%;
+        height: 128px;
+    }
+}
+@media (max-width: 767px) {
+    html{
+        font-size: 14px;
+    }
+    #header{
+        padding: 0 15px;
+    }
+    #petto-container{
+        width: 100%;
+    }
+    #petto-container > div{
+        width: 100%;
+    }
+    .petto-left{
+        height: 180px;
+    }
+    .petto-left p{
+        width: 100%;
+        margin: 70px auto;
+        text-align: center;
+    }
+    .petto-right{
+        height: 357px;
+        background: #000000;
+        margin: 0 auto;
+    }
+    .petto-title{
+        width: 100%;
+    }
+    .petto-content{
+        width: 100%;
+        height: auto;
+    }
+    .petto-manage span{
+        width: 60%;
+        float: none;
+        display: block;
+        /*margin: 0 auto;*/
+    }
+    .petto-reg{
+        margin: 10px auto;
+    }
+    .petto-login{
+        margin: 0 auto;
+    }
+    .petto-right p,.petto-right div{
+        margin: 0 auto;
+    }
+    .petto-more{
+        width: 100%;
+        height: 30px;
+        display: block;
+        margin-right: 6px;
+        margin-left: 0;
+        text-align: right;
+        padding-top: 80px;
+    }
+    #waist>div{
+        width: 100%;
+        float: left;
+    }
+    #more-container{
+        width: 100%;
+        height: auto;
+    }
+    .more-left{
+        width: 100%;
+        /*float: left;*/
+        height: auto;
+    }
+    .more-right{
+        width: 100%;
+        /*float: left;*/
+        text-align: center;
+        background: #000000;
+        height: auto;
+    }
+    /*.more-a1{*/
+        /*width: 50%;*/
+    /*}*/
+    /*.more-a2{*/
+        /*width: 50% ;*/
+    /*}*/
+    .more-d2 a{
+        width: 50%;
+        padding: 14px 7%;
+        /*margin: 5px 0 0 0;*/
+    }
+    #footer{
+        height: auto;
+    }
+
+}
+

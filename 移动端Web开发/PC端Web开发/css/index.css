@@ -1,0 +1,213 @@
+/*样式重置开始*/
+*{
+    margin: 0;
+    padding: 0;
+}
+ol,ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+img{
+    border: 0;
+}
+.clearfix::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+.wrapper{
+    width: 990px;
+    height: 100%;
+    margin: 0 auto;
+}
+/*样式重置结束*/
+
+/*header样式开始*/
+#header{
+    height: 105px;
+    background: #EEEEEE;
+}
+#header .wrapper{
+    position: relative;
+}
+#header input{
+    width: 200px;
+    height: 17px;
+    padding: 3px 6px 5px 6px;
+    border: 1px solid #BABEBF;
+    font-size: 14px;
+    color:#BABEBF;
+    position: absolute;
+    left: 198px;
+    top: 20px;
+}
+#header span{
+    width: 115px;
+    height: 15px;
+    float: right;
+    margin: 10px;
+    background: url("../img/theme.gif") no-repeat 0 0;
+    overflow: hidden;
+}
+#header .nav{
+    background: #4A4A4A;
+    height: 37px;
+    padding-bottom: 6px;
+}
+#header ul{
+    margin-left: 25px;
+    line-height: 37px;
+}
+#header ul li{
+    float: left;
+    font-size: 14px;
+    padding: 0 8px;
+    margin-right:14px ;
+}
+#header a{
+    color: #FFFFFF;
+}
+/*header样式结束*/
+/*body样式开始*/
+#body{
+    height: 580px;
+}
+#body .wrapper>div{
+    float: left;
+    padding: 10px 0;
+}
+.body-left{
+    width: 187px;
+    height: 560px;
+    padding: 5px 10px 0 10px;
+    border:1px solid #EEEEEE ;
+}
+.body-left li{
+    width: 79px;
+    height: 24px;
+    float: left;
+}
+.body-left h2{
+    width: 164px;
+    height: 30px;
+}
+.body-left h3{
+    width: 164px;
+    height: 25px;
+    border-bottom: 1px solid #EEEEEE;
+    font-size: 100%;
+}
+.body-right{
+    width: 790px;
+    height: 580px;
+}
+.body-right-top{
+    height: 321px;
+    /*background: orange;*/
+}
+.body-right-top>div{
+    margin-left: 5px;
+    float: left;
+}
+.body-right-t1{
+    width: 550px;
+    height: 321px;
+    background: url("../img/5.jpg") no-repeat;
+    position: relative;
+}
+.body-right-t1 ul{
+    position: absolute;
+    bottom: 0;
+    background: #4A4A4A ;
+}
+.body-right-t1 li{
+    width: 109px;
+    height: 42px;
+    float: left;
+    text-align: center;
+    margin-left:1px ;
+    color: #FFFFFF;
+}
+.body-right-t2{
+    width: 230px;
+    height: 321px;
+    /*background: orange;*/
+}
+.body-right-t2 h2{
+    width: 228px;
+    height: 24px;
+    border:1px solid #EEEEEE ;
+}
+.body-right-t2 ul{
+    border:1px solid #EEEEEE ;
+    padding: 6px 2px 0 12px;
+}
+.body-right-t2 a{
+    font-size: 12px;
+    color:#000000;
+}
+.body-right-bottom{
+    width: 790px;
+    height: 230px;
+    margin-top: 10px;
+    /*background: orange;*/
+}
+.body-right-bottom-d1{
+    width: 790px;
+    height: 30px;
+    position: relative;
+}
+.body-right-bottom-d1 ul{
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.body-right-bottom-d1 li{
+    float: left;
+}
+.body-right-bottom-d1 a{
+    padding: 0 10px;
+    margin: 0 2px;
+    color: #000000;
+    background: #CCCCCC;
+}
+.body-right-bottom-d2{
+    margin: 0 auto;
+}
+.img-menu li{
+    float: left;
+    margin-left:7px;
+}
+.img-menu{
+    width: 760px;
+    margin: 0 auto;
+}
+.li-menu{
+    width: 760px;
+    margin: 0 auto;
+}
+.li-menu li{
+    width: 184px;
+    float: left;
+    text-align: center;
+    background: #CCCCCC;
+    margin: 0 3px;
+}
+.li-menu a{
+    color: #000a28;
+}
+/*body样式结束*/
+/*footer样式开始*/
+#footer{
+    background: #CCCCCC;
+    /*height: 54px;*/
+}
+#footer .wrapper div{
+    height: 18px;
+    padding: 18px 0;
+    background: #CCCCCC;
+    text-align: center;
+}
+/*footer样式结束*/
