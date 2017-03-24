@@ -1,0 +1,84 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+html,body,#photowall{
+    width: 100%;
+    height: 100%;
+}
+.stage{
+    width: 100%;
+    height: 100%;
+    background: #CCCCCC;
+    position: relative;
+    overflow: hidden;
+    perspective: 800px;
+}
+.img-cpn{
+    width: 320px;
+    height: 360px;
+    background: #FFFFFF;
+    text-align: center;
+    padding-top: 40px;
+    box-sizing: border-box;
+    cursor: pointer;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transition: all 1s ease-in-out;
+    transform-style: preserve-3d;
+}
+.img-cpn h2{
+    margin-top: 20px;
+}
+.img-cpn div{
+    width: 320px;
+    height: 360px;
+    background: #FFFFFF;
+    line-height: 360px;
+    cursor: pointer;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
+}
+.nav-cpn{
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    background: #000000;
+    border-radius: 50%;
+    transform: scale(.7);
+    cursor: pointer;
+    vertical-align: middle;
+    transition: all .5s ease-in-out;
+}
+.nav1{
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translate(-50%);
+    text-align: center;
+    line-height: 30px;
+}
+.is-center{
+    transform: scale(1);
+}
+.is-center::after{
+    content: "\e600";
+    color: #fff;
+    font-family: 'turn-arrow';
+    font-size: 20px;
+}
+.is-inverse{
+    transform: rotateY(180deg);
+}
+@font-face {
+    font-family: 'turn-arrow';
+    src: url('../font/icons/turn-arrow.eot'); /* IE9+ */
+    src: url('../font/icons/turn-arrow.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../font/icons/turn-arrow.woff') format('woff'), /* chrome、firefox */
+    url('../font/icons/turn-arrow.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+    url('../font/icons/turn-arrow.svg#fontname') format('svg'); /* iOS 4.1- */
+}
