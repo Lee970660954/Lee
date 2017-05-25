@@ -1,0 +1,27 @@
+/*css reset*/
+*{
+    margin: 0;
+    padding: 0;
+}
+ul,ol{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+img{
+    border: 0;
+}
+/*public style*/
+.wrapper{
+    padding: 0 5%;
+    margin: 0 auto;
+}
+.clearfix::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+html{
+    font-size: 16px;
+}

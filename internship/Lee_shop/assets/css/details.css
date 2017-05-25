@@ -1,0 +1,143 @@
+.details_setimate_title{
+	height: 40px;
+	background: #f6f6f6 ;
+	margin-bottom: 20px;
+}
+.details_setimate{
+	border: #d4d4d4 1px solid;
+	margin-top: 20px;
+}
+
+.details_setimate_title span{
+	background: #fff;
+	width: 15%;
+	height: 100%;
+	display: block;
+	border-bottom: none;
+	border-right: #d4d4d4 1px solid;
+	border-top: orange 3px solid;
+	text-align: center;
+	line-height: 40px;	
+}
+.details_setimate_title div{
+	float: right;
+	height: 100%;
+	width: 85%;
+	border-bottom: #d4d4d4 1px solid;
+
+}
+@media(max-width: 780px){
+	.details_setimate_title span{
+		width: 106px;
+		position: absolute;
+		left: 0;
+	}
+	.details_setimate_title{
+		display: -webkit-box;
+		position: relative;
+	} 
+	.details_setimate_title div{
+		-webkit-box-flex:1;
+	}
+}
+.panel-body{
+	padding: 10px 10%;
+	position: relative;
+	padding-bottom: 30px;
+}
+.img-circle{
+	padding: 0;
+	width: 60px;
+	height: 60px;
+}
+.setimate_inf{
+	text-align: center;
+}
+.setimate_time{
+	position: absolute;
+	bottom: 10px;
+	left: 35%;
+	font-size: 12px;
+	color: #b0b0b0;
+}
+.setimate_container{
+	display: -webkit-box;
+	padding: 20px;
+	position: relative;
+	border-top: #d4d4d4 1px solid;
+	border-bottom: #d4d4d4 1px solid;
+	margin-bottom: 30px;
+}
+.setimate_inf{
+	width: 33%;
+}
+.setimate_content{
+	-webkit-box-flex:2;
+}
+.setimate_head img{
+	width: 30%;
+}
+@media(max-width: 767px){
+	.setimate_content{
+		font-size: 10px;
+	}
+	.setimate_time{
+		font-size: 8px;
+	}
+}
+/* 商品详情开始 */
+.details_container{
+	margin-top: 30px;
+	display: -webkit-box;
+	border: #d4d4d4 1px solid;
+	padding: 20px;
+}
+.details_img{
+	width: 50%;
+}
+.details_content{
+	-webkit-box-flex:1;
+	/*float: right;*/
+	/*width: 60%;*/
+}
+.big_details_img{
+	width: 40%;
+	display: none;
+}
+.details_img_container{
+	-webkit-box-flex:1;
+	text-align: center;
+	width: 100%;
+}
+.details_content_price{
+
+}
+.details_content input{
+	width: 30px;
+	height: 25px;
+}
+.details_content a{
+	cursor: pointer;
+}
+.details_content_pay{
+	display: inline-block;
+	width: 135px;
+	height: 40px;
+	line-height: 40px;
+	background: #ffe4d0;	
+	cursor: pointer;
+	text-align: center;
+	margin-right: 3%;
+	color: #e5511d;
+}
+.details_content_add{
+	display: inline-block;
+	width: 85px;
+	background: #f22d00;
+	cursor: pointer;
+	text-align: center;
+	width: 135px;
+	height: 40px;
+	color: #fff;
+	line-height: 40px;
+}

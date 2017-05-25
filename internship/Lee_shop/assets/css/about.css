@@ -1,0 +1,66 @@
+#about-pronounce>img{
+    width: 100%;
+}
+.person{
+    display: -webkit-box;
+}
+#about-us{
+    background: url("../img/background7.jpg");
+}
+.person>li{
+    width: 50%;
+    -webkit-box-flex: 1;
+}
+.person img{
+    width: 100%;
+    border: 50px solid #EEEEEE;
+}
+.person-list{
+    width:100%;
+    position:relative;
+    /*需要用padding来维持16:9比例,也就是9除以16*/
+
+}
+
+.person-list video{
+    position: absolute;
+    bottom:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.about-advertisement>h1{
+    color: #EEEEEE;
+    text-align: center;
+}
+.about-advertisement>p{
+    padding: 0 20px;
+    color: #EEEEEE;
+    text-align: center;
+}
+#about-carousel{
+    position: relative;
+}
+#about-carousel img{
+    width: 100%;
+}
+.about-advertisement{
+    position: absolute;
+    top:5%;
+    cursor: pointer;
+}
+.about-advertisement{
+    border: 5px solid #FFFFFF;
+    opacity: 0.5;
+}
+.about-advertisement:hover{
+    opacity: 1;
+}
+#about-brief{
+    background: url("../img/background8.jpg") no-repeat;
+    height: 500px;
+    color: #FFFFFF;
+}
+#about-brief>p{
+    padding: 20% 10%;
+}

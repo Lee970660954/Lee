@@ -1,0 +1,73 @@
+
+.nav-tabs{
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+.img-rounded{
+	padding: 0;
+}
+.shopping_selected{
+	position: absolute;
+	z-index: 99;
+}
+.details_title{
+	word-wrap:break-word;
+}
+.thumbnail{
+	vertical-align: middle;
+}
+.shopping_num input{
+	height: 25px;
+	width: 30px;
+}
+.shopping_price,.shopping_num,.shopping_sum,.shopping_handel{
+	text-align: center;
+}
+.shopping_list_container{
+ 	display: -webkit-box;
+}
+.shopping_price,.shopping_handel{
+ 	-webkit-box-flex:1;
+}    
+.shopping_num{
+ 	-webkit-box-flex:2;
+}
+@media(max-width: 450px){
+	div.product_list_submenu,.shopping_sum_price span,.shopping_sum_price button.btn{
+		font-size: 6px;
+	}
+}
+.btn-default{
+	float: right;
+	margin-right: 5px;
+}
+.shopping_sum_price{
+	height: 40px;
+	position: relative;
+}
+.shopping_sum_price span{
+	position: absolute;
+	bottom: 10px;
+	right: 60px;
+	display: block;
+	margin-top: 8px;
+}
+.shopping_sum_price button.btn{
+	position: absolute;
+	bottom: 2px;
+	right: 0;
+}
+.shopping_sum_price label{
+	position: absolute;
+	bottom: 10px;
+	left: 10px;
+	margin: 0;
+}
+.shopping_sum_price{
+	padding-bottom: 10px;
+	margin-bottom: 10px;
+	border-bottom: #e7e7e7 1px solid;
+}
+.shopping_num>input{
+	width:40%;
+}
